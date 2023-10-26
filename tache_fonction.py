@@ -27,9 +27,9 @@ class Tache:
         return self.temps
     
     def setStatut(self, newStatut: str): # change le statut avec une valeur donné
-        validAnswers = ["pas commançé", "à faire", "en cours", "terminé"]
-        newStatut = newStatut.lower()
-        if newStatut in validAnswers:
+        newStatut = newStatut.lower() # met tout les charactères de la valeur en minuscule, si cette ligne est ignoré, la fonction revoie une erreur si la valeur est écrite en majuscule
+        validAnswers = ["pas commançé", "à faire", "en cours", "terminé"] # les valeurs autorisées
+        if newStatut in validAnswers: # vérifie si la valeur entrée est dans la liste
             self.statut = newStatut
         else:
             print("Erreur : Valeur invlide")
@@ -44,7 +44,7 @@ class Tache:
         return self.membres
     
     def remMembre(self, delMembre: str): # supprime un membre de la tâche
-        if delMembre in self.membres:
+        if delMembre in self.membres: # vérifie si la valeur entrée est dans la liste
             self.membres.remove(delMembre)
         else:
             print("Erreur : Membre invalide")
