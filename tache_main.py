@@ -1,7 +1,7 @@
-from pymongo import MongoClient # BDD Orienté document
+from pymongo import MongoClient # BDD Mongo Orienté document
 from tache_fonction import Tache # tache_fonction.py, class Tache
 
-def connection():
+def connection(): # essaye de se connecter à la BDD
     try:
         global client
         client = MongoClient("localhost", 27017)
@@ -11,7 +11,7 @@ def connection():
     except Exception as e:
         return ("Erreur de connexion : {e}")
 
-def createTask(nom, desc, temps, statut, membres, id_projet):
+def createTask(nom, desc, temps, statut, membres, id_projet): # créer une tache dans la BDD
     TASK = {"nom": nom, "desc": desc, "temps": temps, "statut": statut, "membres": membres, "id_projet": id_projet}
     global collection
     db = client["Gestion_projets"]
