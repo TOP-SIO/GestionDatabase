@@ -10,12 +10,11 @@ def connection():
 
     except Exception as e:
         return ("Erreur de connexion : {e}")
-    
-db = client["Gestion_projets"]
 
 def createTask(nom, desc, temps, statut, membres, id_projet):
     TASK = {"nom": nom, "desc": desc, "temps": temps, "statut": statut, "membres": membres, "id_projet": id_projet}
     global collection
+    db = client["Gestion_projets"]
     collection = db["Taches"]
     insert_tache = collection.insert_one(TASK)
     return insert_tache.inserted_id
