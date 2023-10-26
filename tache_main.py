@@ -1,4 +1,3 @@
-from bson import ObjectId
 from pymongo import MongoClient # BDD Mongo Orienté document
 from tache_fonction import Tache # tache_fonction.py, class Tache
 

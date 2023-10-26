@@ -1,12 +1,11 @@
 class Tache:
-    # Valeurs : nom, desc, temps, statut, membres, id_projet #
     def __init__(self, nom: str, desc: str, temps: int, statut: str, membres: list[str], id_projet):
-        self.setNom(nom)
-        self.setDesc(desc)
-        self.setTemps(temps)
-        self.setStatut(statut)
-        self.membres = membres
-        self.setID_projet(id_projet)
+        self.setNom(nom) # nom
+        self.setDesc(desc) # desc
+        self.setTemps(temps) # temps
+        self.setStatut(statut) # statut
+        self.membres = membres # membres
+        self.setID_projet(id_projet) # id_projet
 
     def setNom(self, newName: str): # change le nom avec une valeur donné
         self.nom = newName
