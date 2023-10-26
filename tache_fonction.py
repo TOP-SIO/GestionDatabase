@@ -1,6 +1,6 @@
 class Tache:
     # Valeurs : nom, desc, temps, statut, membres, id_projet #
-    def __init__(self, nom: str, desc: str, temps: int, statut: str, membres: list, id_projet):
+    def __init__(self, nom: str, desc: str, temps: int, statut: str, membres: list[str], id_projet):
         self.setNom(nom)
         self.setDesc(desc)
         self.setTemps(temps)
@@ -32,19 +32,22 @@ class Tache:
         if newStatut in validAnswers:
             self.statut = newStatut
         else:
-            print("Erreur : valeur invlide")
+            print("Erreur : Valeur invlide")
 
     def getStatut(self): # récupère le statut de la tâche
         return self.statut
     
-    def addMembre(self, newMembre): # ajoute un membre avec une valeur donné
+    def addMembre(self, newMembre: str): # ajoute un membre avec une valeur donné
         self.membres.append(newMembre)
 
     def getMembres(self): # récupère les membres de la tâche
         return self.membres
     
-    def remMembre(self, delMembre): # supprime un membre de la tâche
-        self.membres.remove(delMembre)
+    def remMembre(self, delMembre: str): # supprime un membre de la tâche
+        if delMembre in self.membres:
+            self.membres.remove(delMembre)
+        else:
+            print("Erreur : Membre invalide")
     
     def setID_projet(self, newProjectID): # change l'id du projet associé avec une valeur donné
         self.id_projet = newProjectID
