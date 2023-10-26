@@ -1,6 +1,6 @@
 class Tache:
     # Valeurs : nom, desc, temps, statut, membres, id_projet #
-    def __init__(self, nom: str, desc: str, temps: int, statut: str, membres: list, id_projet: str):
+    def __init__(self, nom: str, desc: str, temps: int, statut: str, membres: list, id_projet):
         self.setNom(nom)
         self.setDesc(desc)
         self.setTemps(temps)
