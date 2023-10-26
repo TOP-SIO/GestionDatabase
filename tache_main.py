@@ -16,7 +16,7 @@ db = client["Gestion_projets"]
 def createTask(nom, desc, temps, statut, membres, id_projet):
     TASK = {"nom": nom, "desc": desc, "temps": temps, "statut": statut, "membres": membres, "id_projet": id_projet}
     global collection
-    collection = db["taches"]
+    collection = db["Taches"]
     insert_tache = collection.insert_one(TASK)
     return insert_tache.inserted_id
 
