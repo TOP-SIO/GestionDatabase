@@ -8,10 +8,10 @@ try:
     db_list = client.list_database_names()
     print("Base de donnéer dispo: ",db_list)
 except Exception as e:
-    print("Could not connect to MongoDB" + e)
+    print("Could not connect to MongoDB", e)
 
 #Set up de la base de donnée   
-db=client['Gestion_projets']
+db = client['Gestion_projets']
 
 if db.membre.count_documents({}) == 0:
     for i in range(10):
