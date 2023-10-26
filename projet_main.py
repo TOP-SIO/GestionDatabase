@@ -22,5 +22,5 @@ if db.membre.count_documents({}) == 0:
 #         projet_create(db)
 #     print("Projects create")
 
-controlleur_ajouter_membre_projet(db,"projet1","nmiller@example.com")
+controlleur_afficher_projet(db,"projet1")
 
